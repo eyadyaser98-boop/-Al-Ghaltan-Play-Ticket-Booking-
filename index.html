@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مسرحية الغلطان - نظام الحجز الإلكتروني</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body { margin: 0; font-family: 'Cairo', sans-serif; direction: rtl; background: #080b11; color: #e2e8f0; }
+.bg { position: fixed; width: 100%; height: 100%; background: radial-gradient(circle at center, #0f172a, #020617); z-index: -1; }
+.header { text-align: center; padding: 30px 25px; background: linear-gradient(180deg, #1e293b, #0f172a); color: #00f0ff; font-weight: bold; border-bottom: 2px solid #00f0ff; }
+.container { width: 90%; max-width: 520px; margin: 30px auto; background: #0f172a; padding: 25px; border-radius: 16px; border: 1px solid #1e293b; }
+label { font-size: 13px; color: #00f0ff; display: block; margin-top: 10px; }
+input, select { width: 100%; padding: 12px; margin: 5px 0 12px 0; border: none; border-radius: 8px; background: #1e293b; color: #fff; border: 1px solid #334155; box-sizing: border-box; }
+.payment-box { background: #020617; border: 1px dashed #00f0ff; padding: 15px; border-radius: 8px; margin-bottom: 15px; display: none; }
+button.main-btn { width: 100%; padding: 14px; margin-top: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; background: linear-gradient(90deg, #00f0ff, #0072ff); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="header">
+    <div class="title">🎭 العرض المسرحي "الغلطان"</div>
+</div>
+
+<div class="container">
+<label>اسم المشاهد:</label>
+<input id="name" placeholder="اكتب اسمك الثلاثي">
+
+<label>رقم الموبايل (واتساب):</label>
+<input id="phone" type="tel" maxlength="11" placeholder="01xxxxxxxxx">
+
+<label>اختر اليوم:</label>
+<select id="day">
+    <option>اليوم الأول</option>
+    <option>اليوم الثاني</option>
+    <option>اليوم الثالث</option>
+    <option>اليوم الرابع</option>
+</select>
+
+<label>فئة التذكرة:</label>
+<select id="type">
+    <option value="50">اقتصادي - 50 جنيه</option>
+    <option value="75">متوسط - 75 جنيه</option>
+    <option value="100">VIP - 100 جنيه</option>
+</select>
+
+<label>عدد التذاكر:</label>
+<input id="tickets" type="number" min="1" value="1">
+
+<label>طريقة الدفع:</label>
+<select id="payment" onchange="togglePayment()">
+    <option value="cash">كاش يوم العرض في المسرح</option>
+    <option value="orange">أورانج كاش (Orange Cash)</option>
+</select>
+
+<div class="payment-box" id="orange-info">
+    <label>رقم محفظة أورانج كاش التي سيتم التحويل منها:</label>
+    <input id="orange-number" type="tel" maxlength="11" placeholder="اكتب رقمك الذي حولت منه">
+    <p style="font-size: 12px; color: #94a3b8;">يرجى تحويل المبلغ لرقمنا: <b>01200246120</b> ثم إرسال سكرين شوت التحويل عبر الواتساب.</p>
+</div>
+
+<button class="main-btn" onclick="submitBooking()">تأكيد الحجز</button>
+</div>
+
+<script>
+function togglePayment() {
+    document.getElementById("orange-info").style.display = (document.getElementById("payment").value === "orange") ? "block" : "none";
+}
+
+function submitBooking() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let day = document.getElementById("day").value;
+    let type = document.getElementById("type").options[document.getElementById("type").selectedIndex].text;
+    let tickets = document.getElementById("tickets").value;
+    let payment = document.getElementById("payment").value;
+    let orangeNum = document.getElementById("orange-number").value;
+
+    if(!name || !phone) { alert("برجاء إدخال الاسم ورقم الهاتف"); return; }
+    
+    let msg = `🎭 طلب حجز جديد - مسرحية الغلطان\n\nالاسم: ${name}\nالموبايل: ${phone}\nاليوم: ${day}\nالفئة: ${type}\nالعدد: ${tickets}\nطريقة الدفع: ${payment === 'orange' ? 'أورانج كاش (من رقم: ' + orangeNum + ')' : 'كاش يوم العرض'}`;
+    
+    window.location.href = "https://wa.me/201200246120?text=" + encodeURIComponent(msg);
+}
+</script>
+
+</body>
+</html>
