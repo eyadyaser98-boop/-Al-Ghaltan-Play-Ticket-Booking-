@@ -1,0 +1,416 @@
+:root {
+    --bg-color: #080808;
+    --card-bg: #141414;
+    --primary-color: #d4af37;
+    --primary-hover: #f39c12;
+    --text-main: #f5f5f5;
+    --text-muted: #aaaaaa;
+    --border-color: #262626;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    direction: rtl;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index: 10000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* ستارة المسرح الحمراء */
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background: linear-gradient(90deg, #600000 0%, #990000 25%, #cc1111 50%, #990000 75%, #600000 100%);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+    background-image: 
+        radial-gradient(ellipse at top, rgba(180, 20, 20, 0.9) 0%, rgba(90, 0, 0, 0.8) 40%, transparent 75%),
+        linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 15%, rgba(255,255,255,0.08) 50%, transparent 85%, rgba(0,0,0,0.3) 100%),
+        repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(40, 0, 0, 0.4) 20px, rgba(40, 0, 0, 0.4) 40px);
+}
+
+.curtain::after {
+    content: '';
+    position: absolute;
+    bottom: 35%;
+    width: 22px;
+    height: 85px;
+    background: linear-gradient(135deg, #d4af37, #96710a, #423102);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    border-radius: 50px;
+}
+
+.curtain-left {
+    left: 0;
+    transform-origin: left;
+    border-right: 4px solid #300000;
+}
+.curtain-left::after { right: 15px; }
+
+.curtain-right {
+    right: 0;
+    transform-origin: right;
+    border-left: 4px solid #300000;
+}
+.curtain-right::after { left: 15px; }
+
+body.loaded .curtain-left { transform: translateX(-100%); }
+body.loaded .curtain-right { transform: translateX(100%); }
+body.loaded #loader { opacity: 0; visibility: hidden; }
+
+/* واجهة البطل */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.9) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content .welcome {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-content .title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    margin-bottom: 15px;
+}
+
+.hero-content .description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-btn, .secondary-btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.main-btn {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.main-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #fff;
+    border: 2px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* الأقسام العامة */
+section {
+    padding: 100px 8%;
+    position: relative;
+    z-index: 4;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.section-title .line {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.detail-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 16px;
+    transition: var(--transition);
+}
+
+.detail-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.detail-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.detail-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.detail-box p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* قسم الحجز */
+.booking {
+    background: linear-gradient(180deg, var(--bg-color) 0%, #0d0d0d 100%);
+}
+
+.booking-card {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+.booking-card h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.booking-sub {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #ddd;
+    text-align: right;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    background: #1a1a1a;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+    text-align: right;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+}
+
+.ticket-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1a1a1a;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 8px 15px;
+}
+
+.ticket-counter button {
+    background: #262626;
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket-counter button:hover {
+    background: var(--primary-color);
+    color: #000;
+}
+
+#ticketCount {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.price-area {
+    background: #1a1a1a;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.price-area span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.price-area strong {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.book-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.book-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: var(--primary-color);
+    color: #000;
+}
+
+footer {
+    background: #050505;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
