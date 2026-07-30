@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const plusBtn = document.getElementById("plus");
     const ticketCountSpan = document.getElementById("ticketCount");
     const totalPriceStrong = document.getElementById("totalPrice");
-    const ticketPrice = 25;
+    const ticketPrice = 50; // تم تحديث السعر إلى 50
     
     let count = 1;
 
