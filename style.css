@@ -24,18 +24,7 @@ body {
     direction: rtl;
 }
 
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000000;
-    z-index: 10000;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-/* ستارة المسرح الحمراء */
+/* ستارة المسرح الحمراء بتفتح تلقائياً بمجرد تحميل الصفحة من غير جافاسكريبت معقد */
 .curtain {
     position: fixed;
     top: 0;
@@ -43,8 +32,9 @@ body {
     height: 100vh;
     background: linear-gradient(90deg, #600000 0%, #990000 25%, #cc1111 50%, #990000 75%, #600000 100%);
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
-    z-index: 999;
-    transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 9999;
+    animation: openCurtain 1.5s ease-in-out 0.5s forwards;
+    pointer-events: none;
     background-image: 
         radial-gradient(ellipse at top, rgba(180, 20, 20, 0.9) 0%, rgba(90, 0, 0, 0.8) 40%, transparent 75%),
         linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 15%, rgba(255,255,255,0.08) 50%, transparent 85%, rgba(0,0,0,0.3) 100%),
@@ -64,21 +54,23 @@ body {
 
 .curtain-left {
     left: 0;
-    transform-origin: left;
     border-right: 4px solid #300000;
 }
 .curtain-left::after { right: 15px; }
 
 .curtain-right {
     right: 0;
-    transform-origin: right;
     border-left: 4px solid #300000;
 }
 .curtain-right::after { left: 15px; }
 
-body.loaded .curtain-left { transform: translateX(-100%); }
-body.loaded .curtain-right { transform: translateX(100%); }
-body.loaded #loader { opacity: 0; visibility: hidden; pointer-events: none; }
+@keyframes openCurtain {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(var(--tx)); visibility: hidden; }
+}
+
+.curtain-left { --tx: -100%; }
+.curtain-right { --tx: 100%; }
 
 /* واجهة البطل */
 .hero {

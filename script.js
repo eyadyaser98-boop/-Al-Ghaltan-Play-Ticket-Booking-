@@ -1,16 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // فتح الستارة الحمراء وإخفاء شاشة التحميل (مع ضمان عدم تعليق الشاشة السوداء أبداً)
-    const openCurtain = () => {
-        document.body.classList.add("loaded");
-    };
-
-    setTimeout(openCurtain, 900);
-    // حماية إضافية في حال تأخر التحميل
-    window.addEventListener("load", openCurtain);
-    setTimeout(openCurtain, 2500);
-
-    // التحكم في عداد التذاكر والأسعار (تم ضبط السعر على 50 جنيه)
+    // التحكم في عداد التذاكر والأسعار (سعر التذكرة 50 جنيه)
     const minusBtn = document.getElementById("minus");
     const plusBtn = document.getElementById("plus");
     const ticketCountSpan = document.getElementById("ticketCount");
