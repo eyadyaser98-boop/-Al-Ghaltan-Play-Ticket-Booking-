@@ -78,7 +78,7 @@ body {
 
 body.loaded .curtain-left { transform: translateX(-100%); }
 body.loaded .curtain-right { transform: translateX(100%); }
-body.loaded #loader { opacity: 0; visibility: hidden; }
+body.loaded #loader { opacity: 0; visibility: hidden; pointer-events: none; }
 
 /* واجهة البطل */
 .hero {
