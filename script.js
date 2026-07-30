@@ -1,20 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // فتح الستارة الحمراء وإخفاء شاشة التحميل
-    setTimeout(() => {
+    // فتح الستارة الحمراء وإخفاء شاشة التحميل (مع ضمان عدم تعليق الشاشة السوداء أبداً)
+    const openCurtain = () => {
         document.body.classList.add("loaded");
-    }, 900);
+    };
 
-    // التحكم في عداد التذاكر والأسعار
+    setTimeout(openCurtain, 900);
+    // حماية إضافية في حال تأخر التحميل
+    window.addEventListener("load", openCurtain);
+    setTimeout(openCurtain, 2500);
+
+    // التحكم في عداد التذاكر والأسعار (تم ضبط السعر على 50 جنيه)
     const minusBtn = document.getElementById("minus");
     const plusBtn = document.getElementById("plus");
     const ticketCountSpan = document.getElementById("ticketCount");
     const totalPriceStrong = document.getElementById("totalPrice");
-    const ticketPrice = 50; // تم تحديث السعر إلى 50
+    const ticketPrice = 50; 
     
     let count = 1;
 
-    if (plusBtn && minusBtn) {
+    if (plusBtn && minusBtn && ticketCountSpan && totalPriceStrong) {
         plusBtn.addEventListener("click", () => {
             if (count < 10) {
                 count++;
@@ -44,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const name = document.getElementById("name").value;
             const phone = document.getElementById("phone").value;
-            const tickets = ticketCountSpan.textContent;
-            const totalPrice = totalPriceStrong.textContent;
+            const tickets = ticketCountSpan ? ticketCountSpan.textContent : "1";
+            const totalPrice = totalPriceStrong ? totalPriceStrong.textContent : "50 جنيه";
             
             const whatsappNumber = "201200246120";
             
