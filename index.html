@@ -1,107 +1,1001 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مسرحية الغلطان</title>
-    <!-- مكتبة الأيقونات والخطوط -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <meta name="description"
+        content="أخبار الفن - تغطية خاصة لمسرحية الغلطان في بورسعيد، تأليف وإخراج أنس ياسر.">
+
+    <meta name="author" content="أخبار الفن">
+
+    <title>أخبار الفن | مسرحية الغلطان - بورسعيد</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
 
-    <!-- ستارة المسرح الحمراء -->
-    <div class="curtain curtain-left"></div>
-    <div class="curtain curtain-right"></div>
 
-    <!-- قسم الواجهة الرئيسية -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="welcome">مرحباً بكم في العرض المسرحي</span>
-            <h1 class="title">مسرحية الغلطان</h1>
-            <p class="description">استعدوا لتجربة مسرحية استثنائية تأخذكم إلى أبعاد جديدة من الدراما والإبداع.</p>
-            <div class="hero-buttons">
-                <a href="#booking" class="main-btn">احجز تذكرتك</a>
-                <a href="#details" class="secondary-btn">تفاصيل العرض</a>
-            </div>
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+                الخميس 20 أغسطس 2026
+            </span>
+
+            <span>
+                أخبار الفن • أخبار المسرح والفنون
+            </span>
+
         </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="main-header">
+
+        <div class="container header-content">
+
+            <div class="brand">
+
+                <h1>
+                    أخبار الفن
+                </h1>
+
+                <p>
+                    أخبار • مسرح • فنون
+                </p>
+
+            </div>
+
+
+            <nav class="main-nav">
+
+                <a href="#home">
+                    الرئيسية
+                </a>
+
+                <a href="#article">
+                    أخبار المسرح
+                </a>
+
+                <a href="#gallery">
+                    صور العرض
+                </a>
+
+                <a href="#cast">
+                    طاقم العمل
+                </a>
+
+                <a href="#credits">
+                    صُنّاع العرض
+                </a>
+
+            </nav>
+
+        </div>
+
     </header>
 
-    <!-- معلومات العرض -->
-    <section id="details">
-        <div class="section-title">
-            <h2>معلومات العرض</h2>
-            <div class="line"></div>
-        </div>
-        <div class="details-grid">
-            <div class="detail-box">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>مكان العرض</h3>
-                <p>مسرح الإقليمية</p>
-                <small style="color: var(--text-muted); display: block; margin-top: 5px; font-size: 0.95rem;">شارع الجمهورية، بجوار حلواني طما، خلف فندق هوليداي</small>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>موعد العرض</h3>
-                <p>يتم معرفته بعد التواصل على الواتساب</p>
-            </div>
-            <div class="detail-box">
-                <i class="fas fa-phone-alt"></i>
-                <h3>التواصل</h3>
-                <p>01200246120</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- قسم الحجز -->
-    <section id="booking" class="booking">
-        <div class="booking-card">
-            <h2>احجز تذكرتك الآن</h2>
-            <p class="booking-sub">املأ البيانات لتأكيد حجزك عبر الواتساب تلقائياً</p>
-            
-            <form id="bookingForm">
-                <div class="input-group">
-                    <label for="name">الاسم بالكامل</label>
-                    <input type="text" id="name" required placeholder="أدخل اسمك هنا">
-                </div>
-                
-                <div class="input-group">
-                    <label for="phone">رقم الهاتف</label>
-                    <input type="tel" id="phone" required placeholder="رقم الموبايل للتواصل">
-                </div>
 
-                <div class="input-group">
-                    <label>عدد التذاكر</label>
-                    <div class="ticket-counter">
-                        <button type="button" id="minus">-</button>
-                        <span id="ticketCount">1</span>
-                        <button type="button" id="plus">+</button>
+    <!-- =========================================
+         BREAKING NEWS
+    ========================================== -->
+
+    <div class="breaking-news">
+
+        <div class="container breaking-content">
+
+            <span class="breaking-label">
+                خاص
+            </span>
+
+            <span>
+                تغطية خاصة لمسرحية «الغلطان» في بورسعيد
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main id="home">
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+
+                    <!-- COVER -->
+
+                    <div class="hero-cover">
+
+                        <img
+                            src="cover.jpg"
+                            alt="غلاف مسرحية الغلطان"
+                            loading="eager"
+                        >
+
+                        <div class="cover-caption">
+
+                            <span>
+                                مسرح • بورسعيد
+                            </span>
+
+                            <strong>
+                                مسرحية «الغلطان»
+                            </strong>
+
+                        </div>
+
                     </div>
+
+
+
+                    <!-- HERO TEXT -->
+
+                    <div class="hero-text">
+
+                        <div class="category">
+                            أخبار المسرح
+                        </div>
+
+
+                        <h2>
+                            «الغلطان».. تجربة مسرحية
+                            تجمع بين الكوميديا والدراما
+                        </h2>
+
+
+                        <p class="hero-description">
+
+                            تجربة مسرحية من
+                            <strong>تأليف وإخراج أنس ياسر</strong>،
+                            بمشاركة مجموعة من المواهب المسرحية
+                            في عرض يجمع بين الدراما والكوميديا
+                            والصراع بين الشخصيات.
+
+                        </p>
+
+
+                        <div class="director-highlight">
+
+                            <span>
+                                المؤلف والمخرج
+                            </span>
+
+                            <strong>
+                                أنس ياسر
+                            </strong>
+
+                        </div>
+
+
+                        <div class="hero-details">
+
+                            <div>
+                                <small>
+                                    التأليف والإخراج
+                                </small>
+
+                                <strong>
+                                    أنس ياسر
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <small>
+                                    المخرج المنفذ
+                                </small>
+
+                                <strong>
+                                    أحمد الريس
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <small>
+                                    المكان
+                                </small>
+
+                                <strong>
+                                    بورسعيد
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="#article"
+                            class="read-button"
+                        >
+                            اقرأ الخبر كاملًا
+                            <span>←</span>
+                        </a>
+
+                    </div>
+
                 </div>
 
-                <div class="price-area">
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ARTICLE
+        ====================================== -->
+
+        <section
+            id="article"
+            class="article-section"
+        >
+
+            <div class="container article-layout">
+
+
+                <!-- ARTICLE -->
+
+                <article class="article">
+
+                    <div class="article-header">
+
+                        <span class="article-category">
+                            أخبار المسرح
+                        </span>
+
+
+                        <h2>
+                            مسرحية «الغلطان»..
+                            أنس ياسر يكتب ويخرج
+                            تجربة مسرحية في بورسعيد
+                        </h2>
+
+
+                        <div class="article-meta">
+
+                            <span>
+                                أخبار الفن
+                            </span>
+
+                            <span>
+                                •
+                            </span>
+
+                            <span>
+                                تغطية خاصة
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ARTICLE IMAGE -->
+
+                    <figure class="article-image">
+
+                        <img
+                            src="stage1.jpg"
+                            alt="مشهد من مسرحية الغلطان"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            جانب من أجواء العرض المسرحي «الغلطان»
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- ARTICLE TEXT -->
+
+                    <div class="article-content">
+
+                        <p>
+                            تشهد الساحة المسرحية في بورسعيد تجربة
+                            جديدة من خلال عرض «الغلطان»، وهو عمل
+                            مسرحي يجمع بين الكوميديا والدراما،
+                            ويقدم مجموعة من الشخصيات ذات الخطوط
+                            المختلفة داخل الأحداث.
+                        </p>
+
+
+                        <p>
+                            ويتولى
+                            <strong>أنس ياسر</strong>
+                            مهمة التأليف والإخراج، إلى جانب مشاركته
+                            في بطولة العرض من خلال شخصية
+                            «سعيد».
+                        </p>
+
+
+                        <blockquote>
+
+                            «الغلطان»..
+                            حكاية مسرحية بشخصيات مختلفة
+                            وصراعات متشابكة.
+
+                        </blockquote>
+
+
+                        <p>
+                            ويضم العرض مجموعة من الممثلين الذين
+                            يجسدون شخصيات متعددة، مع وجود عناصر
+                            فنية مساندة في الإضاءة والمؤثرات الصوتية
+                            والإدارة التنفيذية للعرض.
+                        </p>
+
+
+                        <h3>
+                            أنس ياسر.. مؤلف ومخرج وبطل العرض
+                        </h3>
+
+
+                        <p>
+                            يأتي اسم
+                            <strong>أنس ياسر</strong>
+                            في مقدمة صُنّاع «الغلطان»، حيث يجمع
+                            بين مسؤولية التأليف والإخراج والمشاركة
+                            في التمثيل من خلال شخصية «سعيد».
+                        </p>
+
+
+                        <p>
+                            ويشارك في صناعة العرض
+                            <strong>أحمد الريس</strong>
+                            كمخرج منفذ، إلى جانب فريق المؤثرات
+                            الصوتية والإضاءة وفريق التمثيل.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="sidebar">
+
+
+                    <div class="sidebar-box director-box">
+
+                        <span>
+                            المؤلف والمخرج
+                        </span>
+
+                        <h3>
+                            أنس ياسر
+                        </h3>
+
+                        <p>
+                            مؤلف ومخرج وممثل
+                        </p>
+
+                        <div class="side-line"></div>
+
+                        <strong>
+                            الغلطان
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="sidebar-box">
+
+                        <h3>
+                            بطاقة العرض
+                        </h3>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                اسم العرض
+                            </span>
+
+                            <strong>
+                                الغلطان
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                المؤلف
+                            </span>
+
+                            <strong>
+                                أنس ياسر
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                المخرج
+                            </span>
+
+                            <strong>
+                                أنس ياسر
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                مخرج منفذ
+                            </span>
+
+                            <strong>
+                                أحمد الريس
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-row">
+
+                            <span>
+                                المدينة
+                            </span>
+
+                            <strong>
+                                بورسعيد
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             THREE PHOTOS
+        ====================================== -->
+
+        <section
+            id="gallery"
+            class="gallery-section"
+        >
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        من العرض
+                    </span>
+
+                    <h2>
+                        صور من مسرحية «الغلطان»
+                    </h2>
+
+                    <p>
+                        لقطات من أجواء العرض المسرحي
+                    </p>
+
+                </div>
+
+
+
+                <div class="gallery-grid">
+
+
+                    <figure class="gallery-item">
+
+                        <img
+                            src="stage1.jpg"
+                            alt="صورة من عرض الغلطان"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            من أجواء العرض
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <figure class="gallery-item">
+
+                        <img
+                            src="stage2.jpg"
+                            alt="صورة ثانية من عرض الغلطان"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            مشهد مسرحي
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <figure class="gallery-item">
+
+                        <img
+                            src="stage3.jpg"
+                            alt="صورة ثالثة من عرض الغلطان"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            أبطال العرض
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CAST
+        ====================================== -->
+
+        <section
+            id="cast"
+            class="cast-section"
+        >
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>
+                        فريق التمثيل
+                    </span>
+
+                    <h2>
+                        أبطال «الغلطان»
+                    </h2>
+
+                    <p>
+                        أسماء الممثلين والشخصيات
+                    </p>
+
+                </div>
+
+
+
+                <div class="cast-list">
+
+
+                    <div class="cast-label featured">
+
+                        <strong>
+                            أنس ياسر
+                        </strong>
+
+                        <span>
+                            سعيد
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            حنين
+                        </strong>
+
+                        <span>
+                            نجلاء
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            زياد
+                        </strong>
+
+                        <span>
+                            يوسف
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            أحمد الريس
+                        </strong>
+
+                        <span>
+                            عم حسن
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            أحمد عبدالرحمن
+                        </strong>
+
+                        <span>
+                            عم سامي
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            باسم
+                        </strong>
+
+                        <span>
+                            العريس
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            حسام إيهاب
+                        </strong>
+
+                        <span>
+                            سيد • أبو العريس
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            يوسف يحيى
+                        </strong>
+
+                        <span>
+                            المحامي
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            عمر نظيم
+                        </strong>
+
+                        <span>
+                            القاضي
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            أدهم محمد
+                        </strong>
+
+                        <span>
+                            أبو سعيد
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            يحيى رؤوف
+                        </strong>
+
+                        <span>
+                            المدير
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            توني جمال
+                        </strong>
+
+                        <span>
+                            سليمان
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            يوسف يحيى
+                        </strong>
+
+                        <span>
+                            كريم
+                        </span>
+
+                    </div>
+
+
+                    <div class="cast-label">
+
+                        <strong>
+                            أحمد
+                        </strong>
+
+                        <span>
+                            البلطجي
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CREDITS
+        ====================================== -->
+
+        <section
+            id="credits"
+            class="credits-section"
+        >
+
+            <div class="container">
+
+                <div class="section-title dark-title">
+
+                    <span>
+                        خلف الكواليس
+                    </span>
+
+                    <h2>
+                        صُنّاع العرض
+                    </h2>
+
+                </div>
+
+
+
+                <div class="credits-list">
+
+
+                    <div class="credit-item">
+
+                        <span>
+                            التأليف والإخراج
+                        </span>
+
+                        <strong>
+                            أنس ياسر
+                        </strong>
+
+                    </div>
+
+
+                    <div class="credit-item">
+
+                        <span>
+                            المخرج المنفذ
+                        </span>
+
+                        <strong>
+                            أحمد الريس
+                        </strong>
+
+                    </div>
+
+
+                    <div class="credit-item">
+
+                        <span>
+                            المؤثرات الصوتية
+                        </span>
+
+                        <strong>
+                            رامز
+                        </strong>
+
+                    </div>
+
+
+                    <div class="credit-item">
+
+                        <span>
+                            الإضاءة
+                        </span>
+
+                        <strong>
+                            أندرو
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FINAL
+        ====================================== -->
+
+        <section class="final-section">
+
+            <div class="container">
+
+                <div class="final-news">
+
                     <div>
-                        <span>الإجمالي المطلوب</span>
-                        <strong id="totalPrice">50 جنيه</strong>
+
+                        <span>
+                            أخبار الفن • مسرح
+                        </span>
+
+                        <h2>
+                            «الغلطان»..
+                            تجربة مسرحية من بورسعيد
+                        </h2>
+
+                        <p>
+                            تأليف وإخراج:
+                            <strong>أنس ياسر</strong>
+                        </p>
+
                     </div>
+
+
+                    <div class="final-name">
+                        أخبار الفن
+                    </div>
+
                 </div>
 
-                <button type="submit" class="book-btn">إتمام الحجز عبر الواتساب</button>
-            </form>
-        </div>
-    </section>
+            </div>
 
-    <!-- زر العودة للأعلى -->
-    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+        </section>
 
-    <!-- الفوتر -->
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer>
-        <div class="footer-logo">مسرحية الغلطان</div>
-        <p>جميع حقوق الإنتاج المسرحي محفوظة © 2026</p>
+
+        <div class="container footer-content">
+
+
+            <div>
+
+                <h2>
+                    أخبار الفن
+                </h2>
+
+                <p>
+                    أخبار المسرح والفنون
+                </p>
+
+            </div>
+
+
+            <div class="footer-credit">
+
+                مسرحية «الغلطان»
+
+                <br>
+
+                تأليف وإخراج:
+                <strong>
+                    أنس ياسر
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 أخبار الفن
+
+        </div>
+
     </footer>
 
-    <script src="script.js"></script>
+
 </body>
+
 </html>
